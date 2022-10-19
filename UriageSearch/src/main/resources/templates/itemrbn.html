@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://wwwthymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Expires" content="Thu, 01 Dec 1994 16:00:00 GMT">
+    <title>削除商品一覧</title>
+    <link th:href="@{/css/bootstrap.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/bootstrap-grid.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/bootstrap-reboot.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/custom.css}" rel="stylesheet" type="text/css">
+    <script type="text/javascript" th:src="@{/js/bootstrap.bundle.js}"></script>
+    <script type="text/javascript" th:src="@{/js/bootstrap.js}"></script>
+</head>
+<body>
+	<br />
+	<div class="container mx-4 mb-4" style="width: 70%;">
+       <h3>■ 削除商品一覧</h3>
+       <form th:action = "@{/itemrbn}" th:object = "${itemListForm}" method = "post">
+	        <table class="table table-bordered text-center mt-4">
+		        <thead class="thead-light">
+			        <tr>
+						<th style="width: 10%;"></th><th style="width: 40%;">商品コード</th><th style="width: 50%;">商品名称</th>
+				    </tr>
+				</thead>
+		        <tbody>
+			        <tr th:each="id : ${itemDel}">
+				        <td><input type="radio" th:value="${id.item_cd}" th:field="*{item_cd}"/>
+						<td th:text="${id.item_cd}"></td>
+						<td th:text="${id.item_name}"></td>
+			        </tr>
+		        </tbody>
+	        </table>
+	        <p th:errors="*{item_cd}" class="error-message"></p>
+	        <p th:text = "${rbn_item}" class="text-primary"></p>
+	        <div class="mt-5">
+		        <button type="submit" name="rbn" class="btn btn-light px-5 mx-2">店舗復活</button>
+		        <a href="/" class="btn btn-light px-5 float-right">戻る</a>
+	        </div>
+	     </form>
+	</div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://wwwthymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Expires" content="Thu, 01 Dec 1994 16:00:00 GMT">
+    <title>売上登録</title>
+    <link th:href="@{/css/bootstrap.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/bootstrap-grid.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/bootstrap-reboot.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/custom.css}" rel="stylesheet" type="text/css">
+    <script type="text/javascript" th:src="@{/js/bootstrap.bundle.js}"></script>
+    <script type="text/javascript" th:src="@{/js/bootstrap.js}"></script>
+</head>
+<body>
+    <br />
+    <div class="container mx-4" style="width: 70%;">
+        <h3>■ 売上登録</h3>
+        <form th:action="@{/entry}" th:object="${uriageEntryForm}" method="post" class="m-5">
+	        <p>　年月日：<input type="text" name="uriage_date" th:value="${uriage_date}"></p>
+	        <p th:errors = "*{Uriage_date}" class="error-message"></p>
+	        <p>　　店舗：
+	        	<select class="btn btn-light" name="ms_cd">
+				    <option th:each="m : ${msList}" th:text="${m.ms_name}" th:value="${m.ms_cd}" th:selected="${selected_ms == m.ms_cd}"></option>
+				</select>
+			</p>
+			<p th:errors = "*{ms_cd}" class="error-message"></p>
+	        <p>　　商品：
+	        	<select class="btn btn-light" name="item_cd">
+			    	<option th:each="i : ${itemList}" th:text="${i.item_name}" th:value="${i.item_cd}" th:selected="${selected_item == i.item_cd}"></option>
+				</select>
+			</p>
+			<p th:errors = "*{item_cd}" class="error-message"></p>
+		  	<p>売上金額：<input type="text" name="uriage" th:value="${uriage}"></p>
+			<p th:errors = "*{uriage}" class="error-message"></p>
+		  	<p th:text="${entry_uriage}" class="text-primary"></p>
+	        <button type="submit" name="entry" class="btn btn-light px-5 mt-5">登録</button>
+	        <a href="/index" class="btn btn-light px-5 mt-5 float-right">戻る</a>
+        </form>
+    </div>
+</body>
+</html>

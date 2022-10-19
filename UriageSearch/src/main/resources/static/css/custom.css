@@ -1,0 +1,10 @@
+.error-message {
+  color: #ff0000;
+}
+
+.success-message {
+	color: #0000FF;
+}
+.sub-title {
+	padding:20px 0 0 0;
+}

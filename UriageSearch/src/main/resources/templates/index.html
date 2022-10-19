@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://wwwthymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta http-equiv="Expires" content="Thu, 01 Dec 1994 16:00:00 GMT">
+<title>デザインノット練習サイト</title>
+<link th:href="@{/css/bootstrap.css}" rel="stylesheet" type="text/css">
+<link th:href="@{/css/bootstrap-grid.css}" rel="stylesheet"
+	type="text/css">
+<link th:href="@{/css/bootstrap-reboot.css}" rel="stylesheet"
+	type="text/css">
+<link th:href="@{/css/custom.css}" rel="stylesheet" type="text/css">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+	integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+	integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+	crossorigin="anonymous"></script>
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+	crossorigin="anonymous"></script>
+<script type="text/javascript" th:src="@{/js/bootstrap.bundle.js}"></script>
+<script type="text/javascript" th:src="@{/js/bootstrap.js}"></script>
+</head>
+<body>
+	<form action="/" th:action="@{/}" th:object="${returnForm}"
+		method="post">
+		<div class="jumbotron">
+			<div class="container">
+				<h2 class="txt-shadow">Welcome to DesignKnot Inc.</h2>
+			</div>
+		</div>
+		<div class="container">
+			<h1>MENU</h1>
+			<hr>
+			<br>
+			<div class="row">
+
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<h4>■売上</h4>
+				</div>
+
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<div class="thumbnail">
+						<div class="caption">
+
+							<a href="http://localhost:8080/search?flg=1"
+								class="btn btn-lg btn-success">売り上げ検索</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<div class="thumbnail">
+						<div class="caption">
+
+							<a href="http://localhost:8080/uriage"
+								class="btn btn-lg btn-warning">売り上げ入力</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<div class="sub-title">
+						<h4>■マスタメンテナンス</h4>
+					</div>
+				</div>
+
+				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+					<div class="thumbnail">
+						<div class="caption">
+
+							<a href="http://localhost:8080/mslist"
+								class="btn btn-lg btn-info">店舗一覧</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<div class="thumbnail">
+						<div class="caption">
+							<a href="http://localhost:8080/msadd?flg=1" class="btn btn-lg btn-info">店舗追加</a>
+						</div>
+					</div>
+				</div>
+
+				<br>
+				<br>
+				<br>
+				<br>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<div class="thumbnail">
+						<div class="caption">
+							<a href="http://localhost:8080/itemadd"
+								class="btn btn-lg btn-info" name="flg_1">商品追加</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+					<div class="thumbnail">
+						<div class="caption">
+							<a href="http://localhost:8080/itemlist"
+								class="btn btn-lg btn-info">商品一覧</a>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+			<hr>
+			<div class="row-flex row-flex-wrap">
+				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+					<div class="panel panel-default">
+						<div class="panel-heading">所在地</div>
+						<div class="panel-body">
+							<p>
+								住所：〒111-0053 東京都台東区浅草橋4-9-11 大黒ビル202<br /> <a
+									href="https://www.google.co.jp/maps/place/%E3%80%92111-0053+%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%8F%B0%E6%9D%B1%E5%8C%BA%E6%B5%85%E8%8D%89%E6%A9%8B%EF%BC%94%E4%B8%81%E7%9B%AE%EF%BC%99%E2%88%92%EF%BC%91%EF%BC%91+%E5%A4%A7%E9%BB%92%E3%83%93%E3%83%AB/@35.6980767,139.7801093,17z/data=!3m1!4b1!4m5!3m4!1s0x60188eae16fff3eb:0xef35e7e0e417fa!8m2!3d35.6980847!4d139.782292"
+									target="_blank">Googleマップで表示</a><br /> 電話：03-5808-9618<br />
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+					<div class="panel panel-default">
+						<div class="panel-heading">業務概要</div>
+						<div class="panel-body">
+							<p>
+								コンピュータソフトウェアの開発<br /> 業務系およびWeb/オープン系のシステム開発<br /> 他ITに係る業務全般<br />
+							</p>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</form>
+</body>
+</html>
